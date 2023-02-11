@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"math"
 	"net/http"
 	"strings"
 	"time"
@@ -63,6 +64,21 @@ func CreateTransaction(w http.ResponseWriter, r *http.Request) {
 
 }
 
+// DeleteTransaction - delete all transaction from the transactions list.
+func DeleteTransaction(w http.ResponseWriter, r *http.Request) {
+	w.Header().Add("content-type", "application/json")
+
+	UserTransaction.Transactions = []Transaction{}
+	UserTransaction.MaxAmount = 0
+	UserTransaction.MinAmount = 0
+	UserTransaction.TotalAmount = 0
+	UserTransaction.TotalTransactions = 0
+
+	w.Header().Add("content-type", "application/json")
+	w.WriteHeader(http.StatusNoContent)
+	json.NewEncoder(w).Encode("transaction deleted")
+}
+
 // GetStatics - provides statics values of transactions
 func GetStatics(w http.ResponseWriter, r *http.Request) {
 	w.Header().Add("content-type", "application/json")
@@ -90,23 +106,11 @@ func GetStatics(w http.ResponseWriter, r *http.Request) {
 		Count: UserTransaction.TotalTransactions,
 	}
 
+	// Round off avg to three decimal
+	statics.Avg = math.Round(statics.Avg*1000) / 1000
+
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(statics)
-}
-
-// DeleteTransaction - delete all transaction from the transactions list.
-func DeleteTransaction(w http.ResponseWriter, r *http.Request) {
-	w.Header().Add("content-type", "application/json")
-
-	UserTransaction.Transactions = []Transaction{}
-	UserTransaction.MaxAmount = 0
-	UserTransaction.MinAmount = 0
-	UserTransaction.TotalAmount = 0
-	UserTransaction.TotalTransactions = 0
-
-	w.Header().Add("content-type", "application/json")
-	w.WriteHeader(http.StatusNoContent)
-	json.NewEncoder(w).Encode("transaction deleted")
 }
 
 // SetUserCity - update the city of end user

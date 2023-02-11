@@ -1,0 +1,27 @@
+mode: set
+transaction-assign/handlers.go:17.64,21.69 3 1
+transaction-assign/handlers.go:27.2,27.63 1 1
+transaction-assign/handlers.go:33.2,34.16 2 1
+transaction-assign/handlers.go:40.2,45.114 4 1
+transaction-assign/handlers.go:50.2,55.52 4 1
+transaction-assign/handlers.go:58.2,58.138 1 1
+transaction-assign/handlers.go:62.2,63.51 2 1
+transaction-assign/handlers.go:21.69,24.3 2 1
+transaction-assign/handlers.go:27.63,30.3 2 1
+transaction-assign/handlers.go:34.16,37.3 2 0
+transaction-assign/handlers.go:45.114,48.3 2 1
+transaction-assign/handlers.go:55.52,57.3 1 1
+transaction-assign/handlers.go:58.138,60.3 1 1
+transaction-assign/handlers.go:68.57,75.85 3 1
+transaction-assign/handlers.go:80.2,80.44 1 1
+transaction-assign/handlers.go:86.2,98.36 4 1
+transaction-assign/handlers.go:75.85,78.3 2 1
+transaction-assign/handlers.go:80.44,83.3 2 1
+transaction-assign/handlers.go:102.64,114.2 9 1
+transaction-assign/handlers.go:117.58,121.62 3 1
+transaction-assign/handlers.go:127.2,129.21 2 1
+transaction-assign/handlers.go:134.2,137.47 3 1
+transaction-assign/handlers.go:121.62,124.3 2 0
+transaction-assign/handlers.go:129.21,132.3 2 1
+transaction-assign/handlers.go:141.60,148.2 4 1
+transaction-assign/main.go:10.13,22.2 7 0
