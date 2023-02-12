@@ -35,15 +35,18 @@
 > GET: /statics
 
 
-    success code: 200
-    -response: {
+    - Header: {
+                location:bangalore
+            }
+
+    - API response: {
                     "sum": 1576.6,
                     "avg": 788.3,
                     "max": 788.3,
                     "min": 788.3,
                     "count": 2
                 }
-
+    success code: 200
 ## Set User City
 > POST: /location
 
