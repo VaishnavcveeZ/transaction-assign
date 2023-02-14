@@ -35,7 +35,7 @@
 > GET: /statics
 
 
-    - Header: {
+    - req Header: {
                 location:bangalore
             }
 
